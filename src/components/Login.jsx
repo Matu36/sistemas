@@ -9,8 +9,8 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const storedUsername = Cookies.get("sistemas");
-    const storedPassword = Cookies.get("glale");
+    const storedUsername = Cookies.get(import.meta.env.VITE_REACT_APP_USERNAME);
+    const storedPassword = Cookies.get(import.meta.env.VITE_REACT_APP_PASSWORD);
 
     if (username === storedUsername && password === storedPassword) {
       navigate("/home");

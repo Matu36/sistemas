@@ -9,14 +9,19 @@ export default function Registro() {
 
   useEffect(() => {
     // Verificar las cookies al cargar la aplicación
-    const storedUsername = Cookies.get("sistemas");
-    const storedPassword = Cookies.get("glale");
+    const storedUsername = Cookies.get(import.meta.env.VITE_REACT_APP_USERNAME);
+    const storedPassword = Cookies.get(import.meta.env.VITE_REACT_APP_PASSWORD);
+
+    // Obtener las credenciales desde las variables de entorno
+    const validUsername = import.meta.env.VITE_REACT_APP_USERNAME;
+    const validPassword = import.meta.env.VITE_REACT_APP_PASSWORD;
 
     // Si las cookies son válidas, redirigir a /login
-    if (storedUsername === "sistemas" && storedPassword === "glale") {
+    if (storedUsername === validUsername && storedPassword === validPassword) {
       navigate("/login");
     }
   }, []);
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 

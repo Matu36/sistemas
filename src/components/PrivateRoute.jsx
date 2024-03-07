@@ -6,8 +6,8 @@ const PrivateRoute = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const sistemasCookie = Cookies.get("sistemas");
-    const glaleCookie = Cookies.get("glale");
+    const sistemasCookie = Cookies.get(import.meta.env.VITE_REACT_APP_USERNAME);
+    const glaleCookie = Cookies.get(import.meta.env.VITE_REACT_APP_PASSWORD);
 
     if (!sistemasCookie || !glaleCookie) {
       navigate("/error");
