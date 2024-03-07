@@ -51,7 +51,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: black;
   }
   a:hover {
     color: #747bff;
@@ -63,8 +63,13 @@ button:focus-visible {
 
 
 h2 {
-  color: #333;
+  color: #3498db; 
+  font-size: 24px; 
+  margin-bottom: 20px; 
+  text-align: center; 
+  text-transform: uppercase; 
 }
+
 
 
 form label {
@@ -86,7 +91,7 @@ form input {
 
 /* Estilos para el botón en el formulario */
 form button {
-  background-color: #4caf50;
+  background-color: #3498db; 
   color: white;
   padding: 10px 15px;
   border: none;
@@ -96,8 +101,9 @@ form button {
 }
 
 form button:hover {
-  background-color: #45a049;
+  background-color: #2980b9; 
 }
+
 
 
 .error-container {
@@ -105,36 +111,43 @@ form button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f0b1b1; /* Color de fondo rosa claro */
-  color: #4a4a4a; /* Color de texto gris oscuro */
+  margin: auto;
+  height: 50vh;
+  background-color: #ff6b6b; 
+  color: #ffffff; 
+  max-width: 80%;
   font-size: 36px;
   font-weight: bold;
   text-align: center;
+  margin-top: 50px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Efecto de cambio de color al pasar el mouse */
 .error-container:hover {
-  background-color: #e89e9e; /* Nuevo color de fondo al pasar el mouse */
-  color: #4a4a4a; /* Nuevo color de texto al pasar el mouse */
+  background-color: #ff4646; 
+  color: #ffffff; 
+  transform: scale(1.05); 
 }
 
 
 
 .registro {
-  max-width: 400px;
-  margin: 0 auto;
+  width: 400px;
+  margin: auto;
+  margin-top: 50vh; 
+  transform: translateY(-50%);
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
   text-align: center;
+  z-index: 1000;
+  background-color: white;
+  
 }
-
 
 .paginado {
   display: flex;
@@ -142,11 +155,13 @@ form button:hover {
   align-items: center;
   margin: 0 auto;
   max-width: 70%;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   border-radius: 15px;
- 
+  background-color: white; 
+  padding: 20px; 
 }
+
 
 .filtroBox {
   width: 300px;

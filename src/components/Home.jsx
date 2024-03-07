@@ -44,7 +44,7 @@ export default function Home() {
   ];
   return (
     <div className="paginado">
-      {/* <h2>Bienvenido a SISTEMAS Y DESARROLLADORES</h2> */}
+      <h2>Bienvenido a SISTEMAS Y DESARROLLADORES</h2>
       <div className="filtroBox">
         <input
           type="text"

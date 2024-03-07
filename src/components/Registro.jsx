@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Registro() {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     // Verificar las cookies al cargar la aplicación
@@ -20,31 +21,45 @@ export default function Registro() {
   const [password, setPassword] = useState("");
 
   const handleRegistro = () => {
-    Cookies.set("sistemas", username, { expires: 5 / 24 }); // 5 horas en días
-    Cookies.set("glale", password, { expires: 5 / 24 });
+    if (username === "sistemas" && password === "glale") {
+      Cookies.set("sistemas", username, { expires: 5 / 24 });
+      Cookies.set("glale", password, { expires: 5 / 24 });
+      navigate("/login");
+    } else {
+      setErrorMessage("Las credenciales son incorrectas");
+    }
+  };
 
-    navigate("/login");
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleRegistro();
+    }
   };
 
   return (
     <div className="registro">
       <h2>Registro</h2>
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       <form>
         <label>
           Usuario:
           <input
+            className="filtro"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
         </label>
         <br />
         <label>
           Contraseña:
           <input
+            className="filtro"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
         </label>
         <br />
