@@ -5,7 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 export default function Registro() {
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const validUsername = import.meta.env.VITE_REACT_APP_USERNAME;
+  const validPassword = import.meta.env.VITE_REACT_APP_PASSWORD;
 
   useEffect(() => {
     // Verificar las cookies al cargar la aplicación
@@ -22,13 +27,10 @@ export default function Registro() {
     }
   }, []);
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleRegistro = () => {
-    if (username === "sistemas" && password === "glale") {
-      Cookies.set("sistemas", username, { expires: 5 / 24 });
-      Cookies.set("glale", password, { expires: 5 / 24 });
+    if (username === validUsername && password === validPassword) {
+      Cookies.set(validUsername, username, { expires: 5 / 24 });
+      Cookies.set(validPassword, password, { expires: 5 / 24 });
       navigate("/login");
     } else {
       setErrorMessage("Las credenciales son incorrectas");
