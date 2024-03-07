@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      { "source": "/login", "destination": "/login" },
+      { "source": "/home", "destination": "/home" },
+      { "source": "/error", "destination": "/error" },
+      { "source": "/:path*", "destination": "/" }
+    ]
+  }
+  
